@@ -112,7 +112,10 @@ function register(){
          $(".allInputs").map(function(){  
             if( !$(this).val() ) {inputCount += 1}
          });
-         if(inputCount > 0){$('#regAllFieldsVal').show()}
+         if(inputCount > 0){
+            $('#serverErrorMsg').html(`Please enter all fields`);
+            //  $('#regAllFieldsVal').show()
+            }
          
          else{ 
 
@@ -151,6 +154,7 @@ function register(){
         }
     })
 }
+
 
 
 

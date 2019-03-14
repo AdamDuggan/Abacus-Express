@@ -173,7 +173,7 @@ function displayUser(){
                 // Income total for Summary: WORKING 
                 let incomeArray = [];
                 income.forEach(x => incomeArray.push(x.amount));
-                const totalIncome = incomeArray.reduce((total, amount) => total + amount); 
+                const totalIncome = incomeArray.reduce((total, amount) => total + amount).toFixed(2); 
                 $('#summaryIncome').append(`£${totalIncome}`)
             
                 // Expenditure update section: WORKING
