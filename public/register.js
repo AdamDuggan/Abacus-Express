@@ -112,7 +112,7 @@ function register(){
          $(".allInputs").map(function(){  
             if( !$(this).val() ) {inputCount += 1}
          });
-         if(inputCount > 10){$('#regAllFieldsVal').show()}
+         if(inputCount > 0){$('#regAllFieldsVal').show()}
          
          else{ 
 
@@ -131,16 +131,21 @@ function register(){
                 return response.json()
             })
             .then(user => {
-                localStorage.setItem("user", user.authToken);
-                // window.location = 'dashboard.html'; 
-                console.log('window.location to dashboard happens here');               
+                console.log('after registerrrr', user)
+                const response = user[0];             
+                if (response && response.msg) {
+                    $('#regAllFieldsVal').hide();
+                    $('#serverErrorMsg').html(`${response.msg}`);
+                } else {
+                    localStorage.setItem("user", user.authToken);
+                    window.location.href = 'dashboard.html'; 
+                }
+              
+              
+                
             })  
             .catch(err => {
-                console.error('Error:', err)
-                // This field is the one which validates on client side- all fields required. Now hide to repalce with...
-                $('#regAllFieldsVal').hide()
-                // Display returned error message from server in regValidationServer div
-                $('#serverErrorMsg').html(`${err}`);
+                console.error('Error while registering:', err)
             })
 
         }
