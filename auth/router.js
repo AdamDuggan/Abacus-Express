@@ -93,16 +93,19 @@ router.post('/register', (req, res) => {
     User.find({
         username: username
       })
+
       .then(user => {
         // Check if 
         if (user.length > 0) {errors.push({msg: "Username is already registered"})}
         })
+
         // HERE WE GO!!!
         .then(user => {
+
           // SEND BACK HERE IF ERRORS 
           if(errors.length > 0){res.status(500).json(errors);}
 
-          // Create new user 
+          // IF NO ERRORS CREATE NEW USER 
           else {
           // I have a model and I am here creating a new instance of user
           const newUser = new User({username, password, income, expenses, budgetinggoal,monthly});
@@ -117,6 +120,7 @@ router.post('/register', (req, res) => {
               newUser.save(function (err, user) {
                 if (err) {
                   console.log(err)
+                  res.status(500).json(errors);
                 } else {
                   console.log('User added to db')
                   const authToken = createAuthToken(newUser.username);

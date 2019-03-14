@@ -134,7 +134,7 @@ function register(){
                 localStorage.setItem("user", user.authToken);
                 // window.location = 'dashboard.html'; 
                 console.log('window.location to dashboard happens here');               
-            })
+            })  
             .catch(err => {
                 console.error('Error:', err)
                 // This field is the one which validates on client side- all fields required. Now hide to repalce with...
