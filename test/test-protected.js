@@ -1,4 +1,4 @@
-// 'use strict';
+// 'use strict';language: node_j
 // global.DATABASE_URL = 'mongodb://localhost/jwt-auth-demo-test';
 // const chai = require('chai');
 // const chaiHttp = require('chai-http');

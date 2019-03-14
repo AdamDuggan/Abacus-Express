@@ -31,7 +31,7 @@
 //       return User.remove({});
 //     });
 
-//   // Initial test to ensure basic files set up is configured
+  // Initial test to ensure basic files set up is configured
 //   describe('Hit URL', function() {
 //     it('should return 202 and html on get', function(){
 //         return chai.request(app)
