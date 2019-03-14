@@ -141,8 +141,10 @@ function displayUser(){
             .then(user => {
                 
                 // Budgeting goal summary: WORKING 
+                let budgetingGoalRounded = user.budgetinggoal.toFixed(2);
+                console.log(budgetingGoalRounded);
                 $('#summaryGoal').append(`
-                 <p>£${user.budgetinggoal}</p>
+                 <p>£${budgetingGoalRounded}</p>
                 `)
                 
                 // Budgeting goal update: WORKING
@@ -201,11 +203,11 @@ function displayUser(){
                 // Summary Expenses total: WORKING
                   expensesArray = [];
                   expenses.forEach(x => expensesArray.push(x.amount));
-                  const totalExpenses = expensesArray.reduce((total, amount) => total + amount); 
+                  const totalExpenses = expensesArray.reduce((total, amount) => total + amount).toFixed(2); 
                   $('#summaryExpenses').append(`£${totalExpenses}`);
 
                 // Remaining at end of month Summary Section: WORKING
-                let remaining = totalIncome - totalExpenses;
+                let remaining = (totalIncome - totalExpenses).toFixed(2);
                 $('#remainingSummary').append(`£${remaining}`);
 
                 // Monthly row: WORKING 
