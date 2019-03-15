@@ -207,8 +207,9 @@ function displayUser(){
                   $('#summaryExpenses').append(`£${totalExpenses}`);
 
                 // Remaining at end of month Summary Section: WORKING
-                let remaining = (totalIncome - totalExpenses).toFixed(2);
-                $('#remainingSummary').append(`£${remaining}`);
+                let remaining = (totalIncome - totalExpenses);
+                let remainingRounded = remaining.toFixed(2);
+                $('#remainingSummary').append(`£${remainingRounded}`);
 
                 // Monthly row: WORKING 
                 let month = user.monthly;
