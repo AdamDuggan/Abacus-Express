@@ -98,7 +98,7 @@ router.post('/register', (req, res) => {
         if (user.length > 0) {errors.push({msg: "Username is already registered"})}
         })
 
-        // HERE WE GO!!!
+        // VALIDATION OVER. IF ERRORS SEND BACK IF NOT, CREATE NEW USER 
         .then(user => {
 
           // SEND BACK HERE IF ERRORS 
