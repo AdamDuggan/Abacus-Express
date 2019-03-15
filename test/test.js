@@ -19,6 +19,7 @@ describe('Test CRUD ENDPOINTS', function() {
   after(function() {
     return closeServer();
   });
+
  
 //   Landing page 
   it('should display index.html page on get', function() {
@@ -27,6 +28,23 @@ describe('Test CRUD ENDPOINTS', function() {
       .then(function(res) {
         expect(res).to.have.status(200);
         expect(res).to.be.html;
+      });
+  });
+
+  it('Should reject users with missing username', function() {
+    return chai
+      .request(app)
+      .post('/api/auth/login')  
+      .send({
+        username, password
+      })
+      .then(() =>
+        expect.fail(null, null, 'Request should not succeed')
+      )
+      .catch(err => {
+        if (err instanceof chai.AssertionError) {
+          throw err;
+        }
       });
   });
 
