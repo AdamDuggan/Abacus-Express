@@ -66,8 +66,6 @@ function goHome(){
     })
 }
 
-
-
 // Click to register an account and push income and exp to db
 function register(){
     $('#regAndCalculateBtn').on('click', function (e) {

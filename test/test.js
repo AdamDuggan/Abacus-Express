@@ -150,32 +150,35 @@ describe('Test CRUD ENDPOINTS', function() {
 //       });
 //   });
 
-//   NOT WORKING: GETTING 500 INSTEAD OF 401 
-//   it('Should reject requests with an invalid token', function() {
-//     const token = jwt.sign(
-//       {username, password},
-//       'wrongSecret',
-//       {algorithm: 'HS256', expiresIn: '7d'}
-//     );
-//     return chai
-//       .request(app)
-//       .post('/api/auth/register')
-//       .set('Authorization', `Bearer ${token}`)
-//       .then(() =>
-//         expect.fail(null, null, 'Request should not succeed')
-//       )
-//       .catch(err => {
-//         if (err instanceof chai.AssertionError) {
-//           throw err;
-//         }
-//         const res = err.response;
-//         expect(res).to.have.status(401);
-//       });
-//   });
+  // NOT WORKING: GETTING 500 INSTEAD OF 401 
+  // it('Should reject requests with an invalid token', function() {
+  //   const token = jwt.sign({username},
+  //     'wrongSecret',
+  //     {algorithm: 'HS256', expiresIn: '7d'}
+  //   );
+  //   return chai
+  //     .request(app)
+  //     .post('/api/auth/register')
+  //     .set('Authorization', `Bearer ${token}`)
+  //     .then(() =>
+  //       expect.fail(null, null, 'Request should not succeed')
+  //     )
+  //     .catch(err => {
+  //       if (err instanceof chai.AssertionError) {
+  //         throw err;
+  //       }
+  //       const res = err.response;
+  //       expect(res).to.have.status(401);
+  //     });
+  // });
 
+// *****************************************************************
+// UPDATE ACCOUNT TESTS
+// *****************************************************************
 
-
-
+// *****************************************************************
+// DELETE ACCOUNT TESTS
+// *****************************************************************
 
 
 
