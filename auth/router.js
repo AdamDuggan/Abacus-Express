@@ -63,7 +63,6 @@ router.post('/refresh', jwtAuth, (req, res) => {
   });
 });
 
-
 //---------------------------------------------------------------
 // Registration form submit: validate, and if no user then push new user to db
 //---------------------------------------------------------------
