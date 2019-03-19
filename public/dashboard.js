@@ -135,14 +135,13 @@ function displayUser(){
 
     fetch('api/auth/dashboard', options)
             .then(response => {
-                console.log('User account returned from server and displayed')
                 return response.json()
             })
             .then(user => {
-                
+                console.log('User account returned from server and displayed: ', user)
+
                 // Budgeting goal summary: WORKING 
                 let budgetingGoalRounded = user.budgetinggoal.toFixed(2);
-                console.log(budgetingGoalRounded);
                 $('#summaryGoal').append(`
                  <p>£${budgetingGoalRounded}</p>
                 `)
