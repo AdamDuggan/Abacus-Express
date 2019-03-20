@@ -206,7 +206,7 @@ function displayUser(){
                   $('#summaryExpenses').append(`£${totalExpenses}`);
 
                 // Remaining at end of month Summary Section: WORKING
-                let remaining = (totalIncome - totalExpenses);
+                let remaining = (totalIncome - totalExpenses - budgetingGoalRounded);
                 let remainingRounded = remaining.toFixed(2);
                 $('#remainingSummary').append(`£${remainingRounded}`);
 

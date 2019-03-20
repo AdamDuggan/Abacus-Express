@@ -188,8 +188,6 @@ router.put('/update', tokenValidator.validateToken, (req, res) => {
 //---------------------------------------------------------------
 router.delete('/delete', tokenValidator.validateToken, (req, res) => {
 
-  console.log('req.headers:', req.headers);
-
   let payload = req.decoded;
   let username = payload.user
   User.findOneAndRemove({
