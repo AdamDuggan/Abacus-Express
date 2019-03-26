@@ -16,7 +16,7 @@ function addRowToIncome(){
             class="input incomeSource"
             type="text"></p>
             <p class="control"><a
-            class="button is-static">Amount</a></p>
+            class="button is-static">£</a></p>
             <p class="control"><input
             class="input incomeAmount"
             type="number"></p>
@@ -41,7 +41,7 @@ function addRowToExpense(){
             class="input expenseSource"
             type="text"></p>
             <p class="control"><a
-            class="button is-static">Amount</a></p>
+            class="button is-static">£</a></p>
             <p class="control"><input
             class="input expenseAmount"
             type="number"></p>
@@ -157,7 +157,7 @@ function displayUser(){
                     class="input incomeSource"
                     type="text" value="${x.source}"></p>
                     <p class="control"><a
-                    class="button is-static">Amount</a></p>
+                    class="button is-static">£</a></p>
                     <p class="control"><input
                     class="input incomeAmount"
                     type="number" value="${x.amount}"></p>
@@ -185,7 +185,7 @@ function displayUser(){
                     class="input expenseSource"
                     type="text" value="${x.source}"></p>
                     <p class="control"><a
-                    class="button is-static">Amount</a></p>
+                    class="button is-static">£</a></p>
                     <p class="control"><input
                     class="input expenseAmount"
                     type="number" value="${x.amount}"></p>
