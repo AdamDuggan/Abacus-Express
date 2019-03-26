@@ -229,9 +229,11 @@ function displayUser(){
             })
             .catch(err => {
                 console.error('Error:', err)
+                window.location.href= 'index.html';
                 $('#errorMsg').toggle();
             });
 }
+
 
 
 // UPDATE ACCOUNT: WORKING 

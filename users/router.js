@@ -9,7 +9,7 @@ const router = express.Router();
 const jsonParser = bodyParser.json();
 
 router.get('/', (req, res) => {
-    res.sendFile('/home/adam/Desktop/thinkful/node/capstone/new/public/index.html');
+    res.sendFile('index.html');
     });
 
 

@@ -126,15 +126,16 @@ router.post('/register', (req, res) => {
 router.post('/dashboard', tokenValidator.validateToken, (req, res) => {
   const {token} = req.body;
   let payload = req.decoded;
-  let username = payload.user
+  let username = payload.user;
   User.findOne({
       username: username
     }).select("-password")
-
     .then(user => {
-      res.json(user);
+      if(!user){res.json('No user')}
+      else{
+      res.json(user);}
     })
-
+    
 })
 
 

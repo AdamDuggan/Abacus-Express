@@ -12,7 +12,7 @@ function addRowToSetupIncome(){
             <div class="field has-addons">
             <p class="control"></p><a class="button is-static">Source</a></p>  
             <p class="control"><input class="input incomeSource" type="text"></p>
-            <p class="control"><a class="button is-static">Amount</a></p>  
+            <p class="control"><a class="button is-static">£</a></p>  
             <p class="control"><input class="input incomeAmount" type="number"></p>
             </div>
             </div>
@@ -31,7 +31,7 @@ function addRowToSetupExpense(){
             <div class="field has-addons">
             <p class="control"></p><a class="button is-static">Source</a></p>  
             <p class="control"><input class="input expenseSource" type="text"></p>
-            <p class="control"><a class="button is-static">Amount</a></p>  
+            <p class="control"><a class="button is-static">£</a></p>  
             <p class="control"><input class="input expenseAmount" type="number"></p>
             </div>
             </div>
