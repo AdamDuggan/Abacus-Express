@@ -7,9 +7,7 @@ const bcrypt = require('bcryptjs');
 const decode = require('jwt-decode');
 const config = require('../config');
 const router = express.Router();
-const {
-  User
-} = require('../users/models');
+const {User} = require('../users/models');
 const tokenValidator = require('./tokenValidator')
 
 const createAuthToken = function (user) {
@@ -55,10 +53,7 @@ router.post('/login', localAuth, (req, res) => {
 // Registration form submit: validate, and if no user then push new user to db
 //---------------------------------------------------------------
 router.post('/register', (req, res) => {
-  
-  // Confirm data sent from reg form 
-  console.log('Infomation sent from reg form');
-  
+    
   // Get user data from reg form
   const {username, password, password2, income, expenses, budgetinggoal, monthly} = req.body;
  
@@ -74,7 +69,7 @@ router.post('/register', (req, res) => {
     errors.push({msg: "Passwords do not match"})
   }
   // check password length: update this to 6 characters before going to production
-  if(password.length < 1){errors.push({msg: "Password should be at least six characters"})}
+  if(password.length < 4){errors.push({msg: "Password should be at least four characters"})}
 
   // Check DB for existing user
     User.find({
@@ -82,7 +77,7 @@ router.post('/register', (req, res) => {
       })
 
       .then(user => {
-        // Check if 
+        // Check if existing user
         if (user.length > 0) {errors.push({msg: "Username is already registered"})}
         })
 
@@ -109,7 +104,6 @@ router.post('/register', (req, res) => {
                   console.log(err)
                   res.status(500).json(errors);
                 } else {
-                  console.log('User added to db')
                   const authToken = createAuthToken(newUser.username);
                   res.json({authToken});
                   }
@@ -150,8 +144,6 @@ router.post('/dashboard', tokenValidator.validateToken, (req, res) => {
 //---------------------------------------------------------------
 router.put('/update', tokenValidator.validateToken, (req, res) => {
 
-  console.log('req.headers:', req.headers);
-  console.log('req.body:', req.body);
 
   let payload = req.decoded;
   let username = payload.user
@@ -159,13 +151,10 @@ router.put('/update', tokenValidator.validateToken, (req, res) => {
       username: username
     }, req.body)
     .then(result => {
-      console.log('successfullherey updated', result);
       res.send(result);
     }).catch(err => {
-      console.log('errrrrr', err);
       res.send(err)
       });
- 
 })
 
 
@@ -180,10 +169,8 @@ router.delete('/delete', tokenValidator.validateToken, (req, res) => {
       username: username
     })
     .then(result => {
-      console.log('successfully deleted', result);
       res.send(result);
     }).catch(err => {
-      console.log('error on delete account', err);
       res.send(err)
       });
 })

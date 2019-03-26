@@ -43,11 +43,9 @@ function watchLoginFormSubmit() {
 
         fetch('/api/auth/login', options)
             .then(response => {
-                // console.log('Returned from server', response)
                 return response.json(response)
             })
             .then(user => {
-                console.log(user)
                 localStorage.setItem("user", user.authToken);
                 window.location = 'dashboard.html';             
             })

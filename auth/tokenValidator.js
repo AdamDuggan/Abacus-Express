@@ -6,11 +6,8 @@ dotenv.config();
 const jwtSecret = process.env.JWT_SECRET;
 
 module.exports.validateToken = (req, res, next) => {
-    console.log('got here');
   const token = req.headers.authorization;
-  console.log('JWT_SECRET', jwtSecret);
   if (token) {
-      console.log('about to verify');
     jwt.verify(token, jwtSecret, (err, decoded) => {
       if (err) {
         return res.status(401).send({ message: 'Could not authenticate token', error: err });

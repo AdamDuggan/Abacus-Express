@@ -2,7 +2,6 @@
 // DASHBAORD JS 
 // *****************************************************************
 
-
 // ADD ROW TO INCOME TABLE: WORKING
 function addRowToIncome(){
     $('#addIncomeTableRowBtn').on('click', event => {
@@ -106,11 +105,9 @@ function yesDeleteMyAccountBtn(){
 
     fetch('api/auth/delete', options)
             .then(response => {
-                console.log('User account returned from server and displayed')
                 return response.json()
             })
             .then(user => {
-                console.log('user deleted successfully');
                 window.location='index.html';
             })
             .catch(err => console.log('err deleting user', err))
@@ -138,8 +135,6 @@ function displayUser(){
                 return response.json()
             })
             .then(user => {
-                console.log('User account returned from server and displayed: ', user)
-
                 // Budgeting goal summary: WORKING 
                 let budgetingGoalRounded = user.budgetinggoal.toFixed(2);
                 $('#summaryGoal').append(`
@@ -305,7 +300,6 @@ function updateAccount(){
                 return response.json()
             })
             .then(user => {
-                console.log('user updated successfully');
                 window.location.reload();
             })
             .catch(err => console.log('err updating user', err))

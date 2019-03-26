@@ -123,16 +123,13 @@ function register(){
             headers: {"Content-Type": 'application/json'},
             // body: {token: JSON.stringify(user)
             body: JSON.stringify(user)
-
         }
 
         fetch('api/auth/register', options)
             .then(response => {
-                console.log('Returned from server')
                 return response.json()
             })
             .then(user => {
-                console.log('after registerrrr', user)
                 const response = user[0];             
                 if (response && response.msg) {
                     $('#regAllFieldsVal').hide();
@@ -140,15 +137,12 @@ function register(){
                 } else {
                     localStorage.setItem("user", user.authToken);
                     window.location.href = 'dashboard.html'; 
-                }
-              
-              
+                }  
                 
             })  
             .catch(err => {
                 console.error('Error while registering:', err)
             })
-
         }
     })
 }
