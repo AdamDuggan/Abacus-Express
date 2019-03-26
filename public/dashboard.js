@@ -214,7 +214,7 @@ function displayUser(){
                 let month = user.monthly;
                 month.forEach(x => 
                 ($('#monthRowWrapper')).append(`
-                <nav class="level is-mobile monthRow">
+                <nav class="level monthRow">
                 <div class="level-item has-text-centered has-text-white">
                 <div>
                 <p class="heading">Month</p>

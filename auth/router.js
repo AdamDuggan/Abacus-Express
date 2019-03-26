@@ -39,9 +39,7 @@ router.use(bodyParser.json());
 router.post('/login', localAuth, (req, res) => {
   const {username, password} = req.body;
 
-  User.find({
-      username: username
-    })
+  User.find({username: username, password: password})
     .then(user => {
       const authToken = createAuthToken(username);
       const payload = {
@@ -52,16 +50,6 @@ router.post('/login', localAuth, (req, res) => {
 
 })
 
-
-//-----------------------------------------------------
-// Refresh: The user exchanges a valid JWT for a new one with a later expiration
-//-----------------------------------------------------
-router.post('/refresh', jwtAuth, (req, res) => {
-  const authToken = createAuthToken(req.user);
-  res.json({
-    authToken
-  });
-});
 
 //---------------------------------------------------------------
 // Registration form submit: validate, and if no user then push new user to db
@@ -142,9 +130,7 @@ router.post('/register', (req, res) => {
 // Dashboard: Get user data to dispaly account to view on page load 
 //---------------------------------------------------------------
 router.post('/dashboard', tokenValidator.validateToken, (req, res) => {
-  const {
-    token
-  } = req.body;
+  const {token} = req.body;
   let payload = req.decoded;
   let username = payload.user
   User.findOne({
@@ -201,9 +187,6 @@ router.delete('/delete', tokenValidator.validateToken, (req, res) => {
       res.send(err)
       });
 })
-
-
-
 
 module.exports = {
   router
