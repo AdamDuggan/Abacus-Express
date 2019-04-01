@@ -13,10 +13,12 @@ The application allows users to:
 
 New users are directed to an account set up screen where they enter their details:
 ![](reg.png)
+<hr>
 
 The user dashboard uses bold colors and clear summary blocks so that users can quickly and 
 clearly see how they are spending and saving:
 ![](Dash.png)
+<hr>
 
 The application is responsive for mobile and tablet: 
 ![](mobile.png)
