@@ -21,4 +21,5 @@ clearly see how they are spending and saving:
 <hr>
 
 The application is responsive for mobile and tablet: 
+<br>
 ![](mobile.png)
