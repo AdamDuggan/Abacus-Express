@@ -12,9 +12,11 @@ The application allows users to:
   Update or delete their account
 
 New users are directed to an account set up screen where they enter their details:
+![](reg.png)
 
 The user dashboard uses bold colors and clear summary blocks so that users can quickly and 
 clearly see how they are spending and saving:
-
+![](Dash.png)
 
 The application is responsive for mobile and tablet: 
+![](mobile.png)
