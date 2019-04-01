@@ -5,7 +5,7 @@ This responsive CRUD app was built from scratch with Express, Node.js and MongoD
 User accounts are authenticated securely with Passport.js and Json web tokens.
 I designed the front-end from base with HTML5, a flexbox framework and JQuery. 
 
-The application allows users to:
+The application allows users to:<br>
 Record their regular income and essential spending<br>
 Set budgeting goals to help save<br>
 Review their monthly non-essential spending<br>
