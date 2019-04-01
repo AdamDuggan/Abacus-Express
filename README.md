@@ -6,10 +6,10 @@ User accounts are authenticated securely with Passport.js and Json web tokens.
 I designed the front-end from base with HTML5, a flexbox framework and JQuery. 
 
 The application allows users to:
-  Record their regular income and essential spending
-  Set budgeting goals to help save
-  Review their monthly non-essential spending
-  Update or delete their account
+Record their regular income and essential spending<br>
+Set budgeting goals to help save<br>
+Review their monthly non-essential spending<br>
+Update or delete their account
 
 New users are directed to an account set up screen where they enter their details:
 ![](reg.png)
